@@ -123,7 +123,7 @@ func ping(conn *websocket.Conn) (err error) {
 	for {
 		select {
 		case <-ticker.C:
-			if err := conn.WriteMessage(websocket.PingMessage, []byte(`{"op": "pong"}`)); err != nil {
+			if err := conn.WriteMessage(websocket.PingMessage, []byte(`{"op": "ping"}`)); err != nil {
 				goto EXIT
 			}
 		}
